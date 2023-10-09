@@ -21,7 +21,6 @@
     {
       "description": "Restrict the version supported in GitHub Actions",
       "matchPackageNames": ["node", "@types/node"],
-      "groupName": "node",
       "allowedVersions": "20.x"
     },
     {
@@ -29,6 +28,17 @@
       "matchPackageNames": ["node"],
       "matchFileNames": ["**/action.yaml", "**/action.yml", "package.json"],
       "rangeStrategy": "auto"
+    },
+    {
+      "description": "Group node versions",
+      "matchPackageNames": ["node", "@types/node"],
+      "matchFileNames": [
+        "**/action.yaml",
+        "**/action.yml",
+        "package.json",
+        "tsconfig.json",
+      ],
+      "groupName": "node"
     }
   ],
   "regexManagers": [
