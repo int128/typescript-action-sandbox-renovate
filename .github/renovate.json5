@@ -1,18 +1,47 @@
 {
   "extends": [
     "github>int128/renovate-base",
-    "github>int128/typescript-action-renovate-config#v1.4.0",
     "helpers:pinGitHubActionDigests",
   ],
   "packageRules": [
+    {
+      "description": "Auto-merge test packages",
+      "matchPackageNames": ["jest", "ts-jest", "@types/jest"],
+      "matchPackagePrefixes": ["jest-"],
+      "groupName": "jest",
+      "automerge": true
+    },
+    {
+      "description": "Auto-merge lint packages",
+      "matchPackageNames": ["eslint"],
+      "matchPackagePrefixes": ["eslint-", "@typescript-eslint/"],
+      "groupName": "eslint",
+      "automerge": true
+    },
     {
       "description": "Restrict the version supported in GitHub Actions",
       "matchPackageNames": ["node", "@types/node"],
       "groupName": "node",
       "allowedVersions": "20.x"
     },
+    {
+      "description": "Disable pinning of node version",
+      "matchPackageNames": ["node"],
+      "matchFileNames": ["**/action.yaml", "**/action.yml", "package.json"],
+      "rangeStrategy": "auto"
+    }
   ],
   "regexManagers": [
+    {
+      "description": "Update using field in action.yaml",
+      "fileMatch": [
+        "^action.ya?ml$",
+        "^.+/action.ya?ml$"
+      ],
+      "matchStrings": ["using: 'node(?<currentValue>\\d+)'"],
+      "depNameTemplate": "node",
+      "datasourceTemplate": "npm"
+    },
     {
       "description": "Update @tsconfig/node in tsconfig.json",
       "fileMatch": ["^tsconfig.json$"],
@@ -20,5 +49,18 @@
       "depNameTemplate": "node",
       "datasourceTemplate": "npm"
     },
+    {
+      "description": "Update this config by self",
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "int128/typescript-action-renovate-config",
+      "fileMatch": [
+        "^renovate\\.json5?$",
+        "^\\.github/renovate\\.json5?$",
+      ],
+      "matchStrings": [
+        "\"github>int128/typescript-action-renovate-config#(?<currentValue>.+?)\"",
+        "\"github>int128/typescript-action-renovate-config:.+?#(?<currentValue>.+?)\""
+      ]
+    }
   ],
 }
