@@ -27,7 +27,7 @@
         "package.json",
         "tsconfig.json",
       ],
-      "groupName": "node",
+      "groupName": "github-actions-node",
       "allowedVersions": "20.x",
     }
   ],
