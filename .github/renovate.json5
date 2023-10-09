@@ -3,5 +3,20 @@
     "github>int128/renovate-base",
     "github>int128/typescript-action-renovate-config#v1.4.0",
     "helpers:pinGitHubActionDigests",
-  ]
+  ],
+  "packageRules": [
+    {
+      "description": "Restrict the version supported in GitHub Actions",
+      "matchPackageNames": ["node", "@types/node"],
+      "groupName": "node",
+      "allowedVersions": "20.x"
+    },
+    {
+      "description": "Update @tsconfig/node in tsconfig.json",
+      "fileMatch": ["^tsconfig.json$"],
+      "matchStrings": ["@tsconfig/node(?<currentValue>\\d+)/tsconfig.json"],
+      "depNameTemplate": "node",
+      "datasourceTemplate": "npm"
+    },
+  ],
 }
