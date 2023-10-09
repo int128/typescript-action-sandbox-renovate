@@ -24,12 +24,6 @@
       "allowedVersions": "20.x"
     },
     {
-      "description": "Disable pinning of node version",
-      "matchPackageNames": ["node"],
-      "matchFileNames": ["**/action.yaml", "**/action.yml", "package.json"],
-      "rangeStrategy": "auto"
-    },
-    {
       "description": "Group node versions",
       "matchPackageNames": ["node", "@types/node"],
       "matchFileNames": [
@@ -49,6 +43,7 @@
         "^.+/action.ya?ml$"
       ],
       "matchStrings": ["using: 'node(?<currentValue>\\d+)'"],
+      "extractVersionTemplate": "^(?<version>\\d+)",
       "depNameTemplate": "node",
       "datasourceTemplate": "npm"
     },
@@ -56,6 +51,7 @@
       "description": "Update @tsconfig/node in tsconfig.json",
       "fileMatch": ["^tsconfig.json$"],
       "matchStrings": ["@tsconfig/node(?<currentValue>\\d+)/tsconfig.json"],
+      "extractVersionTemplate": "^(?<version>\\d+)",
       "depNameTemplate": "node",
       "datasourceTemplate": "npm"
     },
