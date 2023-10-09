@@ -21,12 +21,6 @@
     {
       "description": "Restrict the version supported in GitHub Actions",
       "matchPackageNames": ["node", "@types/node"],
-      "matchFileNames": [
-        "**/action.yaml",
-        "**/action.yml",
-        "package.json",
-        "tsconfig.json",
-      ],
       "groupName": "github-actions-node",
       "allowedVersions": "20.x",
     }
