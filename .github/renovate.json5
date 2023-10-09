@@ -11,6 +11,8 @@
       "groupName": "node",
       "allowedVersions": "20.x"
     },
+  ],
+  "regexManagers": [
     {
       "description": "Update @tsconfig/node in tsconfig.json",
       "fileMatch": ["^tsconfig.json$"],
