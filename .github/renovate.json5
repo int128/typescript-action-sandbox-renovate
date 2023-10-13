@@ -21,9 +21,7 @@
     {
       "description": "Restrict the version supported in GitHub Actions",
       "matchPackageNames": ["node", "@types/node"],
-      "groupName": "github-actions-node",
-      "allowedVersions": "20.x",
-      "rangeStrategy": "auto",
+      "groupName": "github-actions-node"
     }
   ],
   "regexManagers": [
