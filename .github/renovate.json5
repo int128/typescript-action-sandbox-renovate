@@ -20,7 +20,12 @@
     },
     {
       "description": "Update Node version of action",
-      "matchPackageNames": ["node", "@types/node", "@tsconfig/node16"],
+      "matchPackageNames": [
+        "node",
+        "@types/node",
+        "@tsconfig/node16",
+        "@tsconfig/node20",
+      ],
       "groupName": "github-actions-node",
       "versioning": "npm",
       "allowedVersions": "20.x"
