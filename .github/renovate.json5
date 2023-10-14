@@ -35,6 +35,7 @@
       "matchPackageNames": ["@tsconfig/node16"],
       "replacementName": "@tsconfig/node20",
       "replacementVersion": "^20",
+      "groupName": "github-actions-node",
     }
   ],
   "regexManagers": [
