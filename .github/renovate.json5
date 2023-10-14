@@ -19,15 +19,12 @@
       "automerge": true
     },
     {
-      "description": "Restrict the version supported in GitHub Actions",
+      "description": "Restrict Node version supported in GitHub Actions",
       "matchPackageNames": ["node", "@types/node"],
       "groupName": "github-actions-node",
-      "bumpVersion": "major"
-    },
-    {
-      "matchPackageNames": ["@types/node"],
       "versioning": "npm",
-    }
+      "allowedVersions: "20.x"
+    },
   ],
   "regexManagers": [
     {
