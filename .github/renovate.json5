@@ -23,7 +23,7 @@
       "matchPackageNames": ["node", "@types/node"],
       "groupName": "github-actions-node",
       "versioning": "npm",
-      "allowedVersions: "20.x"
+      "allowedVersions": "20.x"
     },
   ],
   "regexManagers": [
