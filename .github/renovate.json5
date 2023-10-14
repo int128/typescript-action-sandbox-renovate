@@ -25,6 +25,11 @@
       "versioning": "npm",
       "allowedVersions": "20.x"
     },
+    {
+      "description": "Update @tsconfig/node version",
+      "matchPackageNames": ["@tsconfig/node16"],
+      "replacementName": "@tsconfig/node20",
+    }
   ],
   "regexManagers": [
     {
