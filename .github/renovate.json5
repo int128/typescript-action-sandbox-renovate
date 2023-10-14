@@ -19,8 +19,8 @@
       "automerge": true
     },
     {
-      "description": "Restrict Node version supported in GitHub Actions",
-      "matchPackageNames": ["node", "@types/node"],
+      "description": "Update Node version of action",
+      "matchPackageNames": ["node", "@types/node", "@tsconfig/node16"],
       "groupName": "github-actions-node",
       "versioning": "npm",
       "allowedVersions": "20.x"
@@ -29,6 +29,7 @@
       "description": "Update @tsconfig/node version",
       "matchPackageNames": ["@tsconfig/node16"],
       "replacementName": "@tsconfig/node20",
+      "replacementVersion": "^20",
     }
   ],
   "regexManagers": [
