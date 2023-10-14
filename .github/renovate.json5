@@ -23,6 +23,10 @@
       "matchPackageNames": ["node", "@types/node"],
       "groupName": "github-actions-node",
       "bumpVersion": "major"
+    },
+    {
+      "matchPackageNames": ["@types/node"],
+      "versioning": "npm",
     }
   ],
   "regexManagers": [
