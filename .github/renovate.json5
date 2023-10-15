@@ -45,13 +45,6 @@
       "datasourceTemplate": "npm"
     },
     {
-      "description": "Update @tsconfig/node in tsconfig.json",
-      "fileMatch": ["^tsconfig.json$"],
-      "matchStrings": ["@tsconfig/node(?<currentValue>\\d+)"],
-      "depNameTemplate": "node",
-      "datasourceTemplate": "npm"
-    },
-    {
       "description": "Update this config by self",
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "int128/typescript-action-renovate-config",
