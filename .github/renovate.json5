@@ -21,7 +21,7 @@
     {
       "description": "Update Node version of GitHub Actions",
       "matchPackageNames": ["node", "@types/node"],
-      "groupName": "github-actions-node",
+      "groupName": "node",
       "versioning": "npm",
       "allowedVersions": "20.x"
     }
