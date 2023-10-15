@@ -19,23 +19,11 @@
       "automerge": true
     },
     {
-      "description": "Update Node version of action",
-      "matchPackageNames": [
-        "node",
-        "@types/node",
-        "@tsconfig/node16",
-        "@tsconfig/node20",
-      ],
+      "description": "Update Node version of GitHub Actions",
+      "matchPackageNames": ["node", "@types/node"],
       "groupName": "github-actions-node",
       "versioning": "npm",
       "allowedVersions": "20.x"
-    },
-    {
-      "description": "Update @tsconfig/node version",
-      "matchPackageNames": ["@tsconfig/node16"],
-      "replacementName": "@tsconfig/node20",
-      "replacementVersion": "^20",
-      "groupName": "github-actions-node",
     }
   ],
   "regexManagers": [
@@ -46,6 +34,13 @@
         "^.+/action.ya?ml$"
       ],
       "matchStrings": ["using: 'node(?<currentValue>\\d+)'"],
+      "depNameTemplate": "node",
+      "datasourceTemplate": "npm"
+    },
+    {
+      "description": "Update node-version in workflows",
+      "fileMatch": ["^\.github/workflows/.+\.ya?ml$"],
+      "matchStrings": ["^ *node-version: (?<currentValue>\\d+)$"],
       "depNameTemplate": "node",
       "datasourceTemplate": "npm"
     },
