@@ -40,7 +40,7 @@
     {
       "description": "Update node-version in workflows",
       "fileMatch": ["^\\.github/workflows/.+\\.ya?ml$"],
-      "matchStrings": ["^ *node-version: (?<currentValue>\\d+)$"],
+      "matchStrings": ["node-version: (?<currentValue>\\d+)$"],
       "depNameTemplate": "node",
       "datasourceTemplate": "npm"
     },
