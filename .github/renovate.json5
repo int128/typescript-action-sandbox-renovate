@@ -18,8 +18,39 @@
       "groupName": "eslint",
       "automerge": true
     },
+    {
+      "description": "Update Node version of GitHub Actions",
+      "matchPackageNames": ["node", "@types/node"],
+      "groupName": "github-actions-node",
+      "versioning": "npm",
+      "allowedVersions": "20.x"
+    }
   ],
   "regexManagers": [
+    {
+      "description": "Update using field in action.yaml",
+      "fileMatch": [
+        "^action.ya?ml$",
+        "^.+/action.ya?ml$"
+      ],
+      "matchStrings": ["using: 'node(?<currentValue>\\d+)'"],
+      "depNameTemplate": "node",
+      "datasourceTemplate": "npm"
+    },
+    {
+      "description": "Update node-version in workflows",
+      "fileMatch": ["^\\.github/workflows/.+\\.ya?ml$"],
+      "matchStrings": ["node-version: +(?<currentValue>\\d+)\\n"],
+      "depNameTemplate": "node",
+      "datasourceTemplate": "npm"
+    },
+    {
+      "description": "Update @tsconfig/node in tsconfig.json",
+      "fileMatch": ["^tsconfig.json$"],
+      "matchStrings": ["@tsconfig/node(?<currentValue>\\d+)"],
+      "depNameTemplate": "node",
+      "datasourceTemplate": "npm"
+    },
     {
       "description": "Update this config by self",
       "datasourceTemplate": "github-releases",
